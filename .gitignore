@@ -1,0 +1,6 @@
+*.swp
+.buildpath
+.project
+.settings
+web/assets/*
+web/protected/runtime/*
