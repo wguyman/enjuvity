@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Profile</title>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link type="text/css" href="css/smoothness/jquery-ui-1.8.5.custom.css" rel="stylesheet" />
+<script type="text/javascript" language="javascript">
+$(function() {
+    searchTrim = [];
+    // Give the input class="searchValue" in the form
+	$(".searchValue").each(function(i){
+		searchTrim[i] = $(this).val();
+        $(this).focus(function(){
+          if ($(this).val() == searchTrim[i]) {
+          $(this).val("");
+          }
+        }).blur(function(){
+           if ($.trim($(this).val()) == "") {
+           $(this).val(searchTrim[i]);
+           }
+        });
+    });
+});
+// Toggle the 'Account' menu item
+$(document).ready(function(){
+	$("#menu ul.nav li a#myAccount").click(function() {
+		// ul#myOptions is the hidden list
+		$("#menu ul.nav ul#myOptions").toggle();
+		$(this).toggleClass("active");
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+<div id="header">
+   <div id="container">
+      <div id="logo"><a href="index.html"><img src="images/logo2.png" name="logo" class="logo"></a></div>
+      <div id="nav">
+      <div id="search">
+		<form action="#">
+		<fieldset>
+		<input type="text" value="Search" class="searchValue" />
+		<input type="submit" value="&nbsp;" class="searchButton" />
+		</fieldset>
+		</form>
+		</div>
+      <div id="menu">
+      
+		<ul class="nav">
+		<li><a href="profile.html">Home</a></li>
+		<li><a href="projects.html">Project</a></li>
+		<li><a href="#">Students</a></li>
+
+		<li><a href="#" id="myAccount">My Profile</a>
+			<!-- BEGIN HIDDEN UL -->
+			<ul id="myOptions">
+			<li><a href="profile" class="name"><img src="images/user-icon.png" alt="Billy Bob" />Billy Bob</a></li>
+			<li><a href="#">Edit Friends</a></li>
+			<li><a href="#">Account Settings</a></li>
+			<li><a href="#">Help Center</a></li>
+			<li><a href="#">Logout</a></li>
+			</ul>
+			<!-- END HIDDEN UL -->
+		</li>
+		</ul>
+
+		</div>
+        </div>
+	  <!--<ul>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Students</a></li>
+      <li><a href="#">My Profile</a></li>
+      <li><a href="#">Log Out</a></li>
+    </ul>-->
+   </div>
+</div>
+<div id="content">
+  <div id="container">
+    <div id="featuredcontent">
+    <div class="leftcol">
+    <span>Menu</span>
+    	<ul>
+        	<li><a class="lefthome" href="#">Home</a></li>
+            <li><a class="leftmenu1" href="#">Menu 1</a></li>
+            <li><a class="leftmenu2" href="#">Menu 2</a></li>
+            <li><a class="leftmenu3" href="#">Menu 3</a></li>            
+        </ul>
+    </div>
+    	<div class="contentleft">
+          	<p><img src="images/stock_people.png" class="profile-img" /><h3 class="h3header">Billy Bob</h3>
+            Stanford Student (Class of 2013) <a class="edit-command" href="#">Edit</a><br />
+            Interest: Skydiving, Hip Hop, Crazy-ass Zip-lining <a class="edit-command" href="#">Edit</a></p>
+            <br class="break" />
+            <p><h3>About Me<span style="font-size:small; font-weight:normal;"><a class="edit-command" href="#">Edit</a></span></h3>
+            Here you can put a little about yourself </p>
+            <br class="break" />
+            <p><h3>Stuff I Do<span style="font-size:small; font-weight:normal;"><a class="edit-command" href="#">Edit</a></span></h3>
+                <ul class="contentul">
+                    <li>BASES (Entrepreneurship Student Group)</li>
+                    <li>My own pretty startup</li>
+                    <li>Play the cello :p</li>
+                </ul>
+            </p>
+        </div>
+        <div class="contentright">
+        	<div class="smallbox">
+            <form name="post" action="#" id="post" method="post">
+                <p><h3 class="h3header">Suggestion?</h3>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.</p>
+                	<textarea name="txtSuggestion"></textarea><br class="break" /><br class="break" />
+                    <input type="submit" value="" name="Submit" id="suggest" />             
+                
+            </form>
+            </div>
+        </div>
+    </div>
+<div class="line"></div>
+
+<p class="footer"><span style="color:#808080;">&copy; 2010</span> <a href="#/">Enjuvity</a> 
+<span style="float:right;"><a href="#">About</a> &middot; <a href="#">Contact Us</a> &middot; <a href="#">Developer</a> &middot; <a href="#">Blog</a></span>
+</p>
+</div>
+</body>
+</html>

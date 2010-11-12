@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Profile</title>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<!--<script type="text/javascript" src="js/jquery-ui-1.8.5.custom.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link type="text/css" href="css/smoothness/jquery-ui-1.8.5.custom.css" rel="stylesheet" />
+<script type="text/javascript" language="javascript">
+$(function() {
+    searchTrim = [];
+    // Give the input class="searchValue" in the form
+	$(".searchValue").each(function(i){
+		searchTrim[i] = $(this).val();
+        $(this).focus(function(){
+          if ($(this).val() == searchTrim[i]) {
+          $(this).val("");
+          }
+        }).blur(function(){
+           if ($.trim($(this).val()) == "") {
+           $(this).val(searchTrim[i]);
+           }
+        });
+    });
+});
+// Toggle the 'Account' menu item
+$(document).ready(function(){
+	$("#menu ul.nav li a#myAccount").click(function() {
+		// ul#myOptions is the hidden list
+		$("#menu ul.nav ul#myOptions").toggle();
+		$(this).toggleClass("active");
+		return false;
+	});
+});
+</script>
+</head>
+<body>
+<div id="header">
+   <div id="container">
+      <div id="logo"><a href="index.html"><img src="images/logo2.png" name="logo" class="logo"></a></div>
+      <div id="nav">
+      <div id="search">
+		<form action="#">
+		<fieldset>
+		<input type="text" value="Search" class="searchValue" />
+		<input type="submit" value="&nbsp;" class="searchButton" />
+		</fieldset>
+		</form>
+		</div>
+      <div id="menu">
+      
+		<ul class="nav">
+		<li><a href="profile.html">Home</a></li>
+		<li><a href="projects.html">Project</a></li>
+		<li><a href="#">Students</a></li>
+
+		<li><a href="profile.html" id="myAccount">My Profile</a>
+			<!-- BEGIN HIDDEN UL -->
+			<ul id="myOptions">
+			<li><a href="profile.html" class="name"><img src="images/user-icon.png" alt="Billy Bob" />Billy Bob</a></li>
+			<li><a href="#">Edit Friends</a></li>
+			<li><a href="#">Account Settings</a></li>
+			<li><a href="#">Help Center</a></li>
+			<li><a href="#">Logout</a></li>
+			</ul>
+			<!-- END HIDDEN UL -->
+		</li>
+		</ul>
+
+		</div>
+        </div>
+   </div>
+</div>
+<div id="content">
+  <div id="container">
+    <div id="featuredcontent">
+    <div class="leftcol">
+    <span>Menu</span>
+    	<ul>
+        	<li><a class="lefthome" href="#">Home</a></li>
+            <li><a class="leftmenu1" href="#">Menu 1</a></li>
+            <li><a class="leftmenu2" href="#">Menu 2</a></li>
+            <li><a class="leftmenu3" href="#">Menu 3</a></li>            
+        </ul>
+    </div>
+    	<div class="contentleft" style="width:780px !important;">
+          	<p><h3 class="h3header">Projects</h3>
+            What people are doing around campus. <a class="edit-command" href="#">Add one!</a>.
+            <br class="break" />
+            <ul class="projectlist">
+                    <li>
+                    <img src="images/stock_people.png" class="thumb-img" /><span><a href="#">Stanford Labor Wage Reform</a></span>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere
+                    </li>
+                    <li>
+                    <img src="images/stock_people.png" class="thumb-img" /><span><a href="#">Social Entrepreneurship Speaker Series</a></span>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere
+                    </li>
+                    <li>
+                    <img src="images/stock_people.png" class="thumb-img" /><span><a href="#">My Own Startup</a></span>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere
+                    </li>
+                </ul>
+            </p>
+            
+        </div>
+    </div>
+<div class="line"></div>
+
+<p class="footer"><span style="color:#808080;">&copy; 2010</span> <a href="#/">Enjuvity</a>
+<span style="float:right;"><a href="#">About</a> &middot; <a href="#">Contact Us</a> &middot; <a href="#">Developer</a> &middot; <a href="#">Blog</a></span>
+</p>
+</div>
+</body>
+</html>
